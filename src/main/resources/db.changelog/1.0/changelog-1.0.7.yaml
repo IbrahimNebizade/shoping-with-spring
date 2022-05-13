@@ -1,0 +1,22 @@
+databaseChangeLog:
+  - changeSet:
+      id: create favorite_products table
+      author: Ibrahim Nebizade
+      changes:
+        - createTable:
+            tableName: favorite_products
+            columns:
+              - column:
+                  name: user_id
+                  type: bigint
+                  constraints:
+                    foreignKeyName: fk_favorite_products_user_id_to_users_id
+                    references: users(id)
+                    deleteCascade: true
+              - column:
+                  name: product_id
+                  type: bigint
+                  constraints:
+                    foreignKeyName: fk_favorite_products_product_id_to_products_id
+                    references: products(id)
+                    deleteCascade: true

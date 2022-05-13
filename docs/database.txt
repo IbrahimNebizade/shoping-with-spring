@@ -1,0 +1,47 @@
+table roles{
+  id bigint
+  name varchar
+  }
+table users{
+  id bigint
+  name varchar
+  surname varchar
+  birth_date date
+  created_at date
+  role_id bigint [ref: > roles.id]
+}
+table user_login_details{
+  user_id bigint [ref: > users.id]
+  email varchar
+  password varchar
+  phone varchar
+}
+table products{
+    id bigint
+    name varchar
+    price bigint
+    stock bigint
+    //sold_product bigint [ref: > sold_products.id]
+  }
+  table bills{
+      id bigint
+      user_id bigint [ref: > users.id]
+      total_price bigint
+      bill_date date
+      admin_confirmed boolean
+      //employee_confirmed boolean
+      product_id bigint [ref: > products.id]
+    }
+table favorite_products{
+  user_id bigint [ref: > users.id]
+  product_id bigint [ref: > products.id]
+
+}
+  table sold_products{
+    id bigint
+    price bigint
+    in_basket boolean
+    product_id bigint [ref: > products.id]
+    bill_id bigint [ref: > bills.id]
+    user_id bigint [ref: > users.id]
+  }

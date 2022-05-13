@@ -1,0 +1,41 @@
+databaseChangeLog:
+  - changeSet:
+      id: create bills table
+      author: Ibrahim Nebizade
+      changes:
+        - createTable:
+            tableName: bills
+            columns:
+              - column:
+                  name: id
+                  type: bigint
+                  constraints:
+                    primaryKey: true
+                    unique: true
+                    nullable: false
+              - column:
+                  name: user_id
+                  type: bigint
+                  constraints:
+                    foreignKeyName: fk_bills_user_id_to_users_id
+                    references: users(id)
+                    deleteCascade: true
+              - column:
+                  name: total_price
+                  type: bigint
+              - column:
+                  name: bill_date
+                  type: timestamp
+                  defaultValue: now()
+                  constraints:
+                    nullable: false
+              - column:
+                  name: admin_confirmed
+                  type: boolean
+              - column:
+                  name: product_id
+                  type: bigint
+                  constraints:
+                    foreignKeyName: fk_bills_product_id_to_products_id
+                    references: products(id)
+                    deleteCascade: true
