@@ -14,8 +14,8 @@ public class SoldProduct {
     private Long id;
     private Long price;
     private boolean inBasket;
-    private List<Product> productId;
-    private Bill billId;
-    private User userId;
+    private List<Product> product;
+    private Bill bill;
+    private User user;
 
 }

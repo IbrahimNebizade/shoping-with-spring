@@ -12,6 +12,6 @@ import java.util.List;
 @NoArgsConstructor
 @Builder
 public class FavoriteProducts {
-    private User userId;
-    private List<Product> productId;
+    private User user;
+    private List<Product> product;
 }
