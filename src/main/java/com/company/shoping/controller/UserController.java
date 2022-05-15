@@ -16,8 +16,9 @@ import org.springframework.web.bind.annotation.RestController;
 @RequestMapping("api/users")
 public class UserController {
     private final UserService userService;
-    @PostMapping
+    @PostMapping("/create")
     public ResponseEntity<CreateUserResponse> createUser(@RequestBody CreateUserCommand command) {
         return ResponseEntity.status(HttpStatus.CREATED).body(userService.cretaeUser(command));
     }
+
 }
