@@ -1,20 +1,15 @@
-package com.company.shoping.model;
+package com.company.shoping.dto;
 
 import lombok.AllArgsConstructor;
 import lombok.Builder;
 import lombok.Data;
 import lombok.NoArgsConstructor;
 
-import javax.persistence.*;
-import java.io.Serializable;
-
 @Data
 @AllArgsConstructor
 @NoArgsConstructor
 @Builder
-public class Role  {
-
-    private Long id;
-
-    private String name;
+public class CheckOtpRequest {
+    private String sessionId;
+    private String otpCode;
 }

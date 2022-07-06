@@ -2,6 +2,8 @@ package com.company.shoping.model;
 
 import lombok.*;
 
+import javax.persistence.*;
+import java.io.Serializable;
 import java.util.Date;
 
 @Data
@@ -9,11 +11,14 @@ import java.util.Date;
 @NoArgsConstructor
 @Builder
 @Getter(value = AccessLevel.PUBLIC)
-public class User {
+public class User  {
     private Long id;
+
     private String name;
     private String surname;
     private Date birthDate;
     private Date createdAt;
-    private Role role;
+    private FavoriteProducts favoriteProduct;
+    //private Role role;
+    private Long balance;
 }

@@ -8,6 +8,6 @@ import java.util.Optional;
 public interface CrudRepository <T,ID>{
     T insert(T entity);
     Optional<T> findById(ID id);
-    T updateById(ID id);
+    T update(T entity);
     void deleteById(ID id);
 }

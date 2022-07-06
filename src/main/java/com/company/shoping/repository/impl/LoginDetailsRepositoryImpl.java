@@ -36,7 +36,7 @@ public class LoginDetailsRepositoryImpl implements LoginDetailsRepository {
     }
 
     @Override
-    public UserLoginDetails updateById(Long aLong) {
+    public UserLoginDetails update(UserLoginDetails entity) {
         return null;
     }
 

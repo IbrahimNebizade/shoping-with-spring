@@ -13,6 +13,6 @@ public static final UserMapper INSTANCE= Mappers.getMapper(UserMapper.class);
 
 @Mapping(target = "id",ignore = true)
 @Mapping(target = "createdAt",ignore = true)
-@Mapping(target = "role",ignore = true)
+//@Mapping(target = "role",ignore = true)
 public abstract User createUserCommandToUser(CreateUserCommand command);
 }

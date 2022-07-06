@@ -11,12 +11,9 @@ import java.util.Date;
 @AllArgsConstructor
 @NoArgsConstructor
 @Builder
-public class CreateUserCommand {
+public class UpdateUserCommand {
+    private Long id;
     private String name;
     private String surname;
     private Date birthDate;
-    private Long balance;
-    private String email;
-    private String password;
-    private String phone;
 }

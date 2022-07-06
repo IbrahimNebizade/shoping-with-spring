@@ -40,7 +40,7 @@ public class ProductReposiztoryImpl implements ProductRepository {
     }
 
     @Override
-    public Product updateById(Long aLong) {
+    public Product update(Product entity) {
         return null;
     }
 
@@ -67,5 +67,14 @@ public class ProductReposiztoryImpl implements ProductRepository {
             log.error("ActionLog.{}.findByName.error- {} ",getClass().getSimpleName(),e);
             return Optional.empty();
         }
+    }
+
+    @Override
+    public Long findPriceByProductId(Long productId) {
+        var sql="select price from products where id=:id";
+        var param=new MapSqlParameterSource()
+                .addValue("id",productId);
+        var product=jdbcTemplate.queryForObject(sql,param,(rs, rowNum) -> Product.builder().price(rs.getLong("price")).build());
+        return product.getPrice();
     }
 }

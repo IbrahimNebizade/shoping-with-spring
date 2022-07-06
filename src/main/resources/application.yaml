@@ -9,6 +9,34 @@ spring:
     username: ${DB_USERNAME}
     password: ${DB_PASSWORD}
     driver-class-name: org.postgresql.Driver
+  mail:
+    username: ${GMAIL}
+    password: ${GMAIL_PASSWORD}
+    host: smtp.gmail.com
+    port: 587
+    protocol: smtp
+    tls: true
+    properties.mail.smtp:
+      auth: true
+      starttls.enable: true
+      ssl.trust: smtp.gmail.com
+  #  jpa:
+#    properties:
+#      hibernate:
+#        jdbc:
+#          time_zone: UTC
+#        temp:
+#          use_jdbc_metadata_defaults: false
+#        format_sql: true
+#    generate-ddl: false
+#    hibernate:
+#      ddl-auto: none
+#    database: postgresql
+#    show-sql: true
   liquibase:
     change-log: db.changelog/changelog-master.yaml
     enabled: true
+#  security:
+#    user:
+#      name:
+#      password:

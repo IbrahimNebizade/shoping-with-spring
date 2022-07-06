@@ -18,7 +18,7 @@ public class ProductServiceImpl implements ProductService {
     public AddProductResponse addProduct(AddProductCommand command) {
         log.info("ActionLog.{}.addProduct.start - command: {} ",getClass().getSimpleName(),command);
         var product= ProductMapper.INSTANCE.createProductCommandToProduct(command);
-        productRepository.insert(product);
+        product=productRepository.insert(product);
         log.info("ActionLog.{}.addProduct.end - command: {} ",getClass().getSimpleName(),command);
         return new AddProductResponse(product.getId());
     }
