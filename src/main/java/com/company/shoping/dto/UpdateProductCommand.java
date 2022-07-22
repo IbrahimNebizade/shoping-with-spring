@@ -1,20 +1,17 @@
-package com.company.shoping.model;
+package com.company.shoping.dto;
 
 import lombok.AllArgsConstructor;
 import lombok.Builder;
 import lombok.Data;
 import lombok.NoArgsConstructor;
 
-import javax.persistence.*;
-import java.io.Serializable;
-
 @Data
 @AllArgsConstructor
 @NoArgsConstructor
 @Builder
-public class Role  {
-
+public class UpdateProductCommand {
     private Long id;
-
-    private String name;
+private String name;
+private Long price;
+private Long stock;
 }

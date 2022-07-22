@@ -41,3 +41,27 @@ databaseChangeLog:
                     foreignKeyName: fk_users_id_to_roles_id
                     references: roles(id)
                     deleteCascada: true
+  - changeSet:
+      id: addColumn-example
+      author: Ibrahim Nebizade
+      changes:
+        - addColumn:
+            tableName: users
+            columns:
+              - column:
+                  name: balance
+                  type: bigint
+#  - changeSet:
+#      id: create users favorites
+#      author: Ibrahim Nebizade
+#      changes:
+#        - addColumn:
+#            tableName: users
+#            columns:
+#              - column:
+#                  name: favorites_product
+#                  type: bigint
+#                  constraints:
+#                    foreignKeyName: fk_users_favorites_product_to_products_id
+#                    references: products(id)
+#                    deleteCascada: true

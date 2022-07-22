@@ -5,15 +5,12 @@ import lombok.Builder;
 import lombok.Data;
 import lombok.NoArgsConstructor;
 
-import java.util.Date;
-
 @Data
 @AllArgsConstructor
 @NoArgsConstructor
 @Builder
-public class CreateBillCommand {
-    private Long userId;
-    private Long totalPrice;
-    private Date billDate;
-    private Long productId;
+public class FindProductByName {
+    private String name;
+    private Long price;
+    private Long stock;
 }

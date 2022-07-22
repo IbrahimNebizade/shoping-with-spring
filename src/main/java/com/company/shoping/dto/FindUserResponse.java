@@ -11,9 +11,12 @@ import java.util.Date;
 @AllArgsConstructor
 @NoArgsConstructor
 @Builder
-public class CreateBillCommand {
-    private Long userId;
-    private Long totalPrice;
-    private Date billDate;
-    private Long productId;
+public class FindUserResponse {
+    private Long id;
+    private String name;
+    private String surname;
+    private String phone;
+    private String email;
+    private Date birthDate;
+    private Long balance;
 }

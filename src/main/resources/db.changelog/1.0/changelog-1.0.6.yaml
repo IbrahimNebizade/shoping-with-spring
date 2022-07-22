@@ -30,9 +30,6 @@ databaseChangeLog:
                   constraints:
                     nullable: false
               - column:
-                  name: admin_confirmed
-                  type: boolean
-              - column:
                   name: product_id
                   type: bigint
                   constraints:

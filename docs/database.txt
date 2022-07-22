@@ -35,7 +35,6 @@ table products{
 table favorite_products{
   user_id bigint [ref: > users.id]
   product_id bigint [ref: > products.id]
-
 }
   table sold_products{
     id bigint
