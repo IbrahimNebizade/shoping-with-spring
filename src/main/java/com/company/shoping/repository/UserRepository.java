@@ -17,10 +17,12 @@ public interface UserRepository extends JpaRepository<Users, Long> {
     @Query("select u.balance from Users u where u.id=:id")
     Long findBalanceByUserId(@Param("id") Long userId);
 
-    @Query("update Users u set u.balance=:balance where u.id=:id")
-    void updateBalanceByUserId(@Param("id") Long userId, @Param("balance") Long newBalance);
 //    void favoriteInsert(Long productId);
     @Query("select u from Users u where u.name=:name")
     Optional<Users> findByUserName(@Param("name") String name);
+    @Query("select u from Users u where u.email=:email")
+    Optional<Users> findByEmail(@Param("email") String email);
+    @Query("select u.password from Users u where u.password=:password")
+    Optional<Users> findByPassword(@Param("password") String password);
 
 }

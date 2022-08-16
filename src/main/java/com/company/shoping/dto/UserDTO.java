@@ -5,14 +5,14 @@ import lombok.Builder;
 import lombok.Data;
 import lombok.NoArgsConstructor;
 
-import java.util.Date;
+import java.util.List;
 
 @Data
 @AllArgsConstructor
 @NoArgsConstructor
 @Builder
-public class UpdateUserResponse {
-    private String name;
-    private String surname;
-
+public class UserDTO {
+    private List<String> grants;
+    private String userName;
+    private Long userId;
 }

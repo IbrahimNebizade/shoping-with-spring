@@ -5,18 +5,11 @@ import lombok.Builder;
 import lombok.Data;
 import lombok.NoArgsConstructor;
 
-import java.util.Date;
-
 @Data
 @AllArgsConstructor
 @NoArgsConstructor
 @Builder
-public class UpdateUserCommand {
+public class CreateTokenCommand {
     private Long id;
-    private String name;
-    private String surname;
-    private Date birthDate;
-    private String email;
-    private String password;
-    private String phone;
+    private String userName;
 }

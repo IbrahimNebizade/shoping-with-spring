@@ -5,14 +5,11 @@ import lombok.Builder;
 import lombok.Data;
 import lombok.NoArgsConstructor;
 
-import java.util.Date;
-
 @Data
 @AllArgsConstructor
 @NoArgsConstructor
 @Builder
-public class UpdateUserResponse {
-    private String name;
-    private String surname;
-
+public class CreateTokenResponse {
+    private String accessToken;
+    private String refreshToken;
 }

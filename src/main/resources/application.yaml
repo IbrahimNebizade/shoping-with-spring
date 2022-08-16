@@ -5,13 +5,14 @@ spring:
   application:
     name: Shopping
   datasource:
-    url: jdbc:postgresql://localhost:5432/shopdb
-    username: ${DB_USERNAME}
-    password: ${DB_PASSWORD}
+    port: 5432:5432
+    url: jdbc:postgresql://localhost:5432/shop
+    username: postgres
+    password: 1234
     driver-class-name: org.postgresql.Driver
   mail:
-    username: ${GMAIL}
-    password: ${GMAIL_PASSWORD}
+    username: ibrahimreshid7@gmail.com
+    password: ivnhsiqctjcwqyyl
     host: smtp.gmail.com
     port: 587
     protocol: smtp
@@ -34,3 +35,11 @@ spring:
        ddl-auto: update
     database: postgresql
     show-sql: true
+jwt:
+  secretKey: dgdfgfgdf
+  issuer: gdfgdfgdfgdfg
+  token:
+    access:
+      expireInMinutes: 2
+    refresh:
+      expireInMinutes: 5

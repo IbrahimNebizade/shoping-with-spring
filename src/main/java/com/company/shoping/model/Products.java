@@ -32,7 +32,7 @@ public class Products implements Serializable {
     private long price;
     @Column(name = "stock")
     private Long stock;
-    @JoinTable(name = "favorite_products", joinColumns = {
+    @JoinTable(name = "favorite_product ", joinColumns = {
             @JoinColumn(name = "product_id", referencedColumnName = "id")}, inverseJoinColumns = {
             @JoinColumn(name = "user_id", referencedColumnName = "id")})
     @ManyToMany

@@ -14,7 +14,9 @@ public static final UserMapper INSTANCE= Mappers.getMapper(UserMapper.class);
 
 @Mapping(target = "id",ignore = true)
 @Mapping(target = "createdAt",ignore = true)
-//@Mapping(target = "role",ignore = true)
+@Mapping(target = "roleId",ignore = true)
+@Mapping(target = "productsList",ignore = true)
+@Mapping(target = "billsList",ignore = true)
 public abstract Users createUserCommandToUser(CreateUserCommand command);
 
 }

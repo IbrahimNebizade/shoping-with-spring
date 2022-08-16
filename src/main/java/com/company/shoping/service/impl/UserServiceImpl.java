@@ -1,11 +1,17 @@
 package com.company.shoping.service.impl;
 
 import com.company.shoping.dto.*;
+import com.company.shoping.event.MailSender;
+import com.company.shoping.mapper.FavoriteMapper;
 import com.company.shoping.mapper.UserMapper;
+import com.company.shoping.repository.FavoriteRepository;
+import com.company.shoping.repository.ProductRepository;
 import com.company.shoping.repository.UserRepository;
+import com.company.shoping.service.OtpService;
 import com.company.shoping.service.UserService;
 import lombok.RequiredArgsConstructor;
 import lombok.extern.slf4j.Slf4j;
+import org.springframework.context.ApplicationEventPublisher;
 import org.springframework.stereotype.Service;
 
 @Service
@@ -13,6 +19,7 @@ import org.springframework.stereotype.Service;
 @Slf4j
 public class UserServiceImpl implements UserService {
     private final UserRepository userRepository;
+    private final OtpService otpService;
 
     @Override
     public CreateUserResponse createUser(CreateUserCommand command) {
@@ -21,6 +28,7 @@ public class UserServiceImpl implements UserService {
             throw new RuntimeException("exception.email.and.number.already.exist");
         });
         var user = UserMapper.INSTANCE.createUserCommandToUser(command);
+        otpService.createOtp(user.getEmail());
         user = userRepository.save(user);
         log.info("ActionLog.{}.createUser.end - command:{}", getClass().getSimpleName(), command);
         return new CreateUserResponse(user.getId());
@@ -33,12 +41,14 @@ public class UserServiceImpl implements UserService {
             user.setName(command.getName());
             user.setSurname(command.getSurname());
             user.setBirthDate(command.getBirthDate());
+            user.setEmail(command.getEmail());
+            user.setPassword(command.getPassword());
+            user.setPhone(command.getPhone());
             userRepository.save(user);
         });
         return UpdateUserResponse.builder()
                 .name(command.getName())
                 .surname(command.getSurname())
-                .birthDate(command.getBirthDate())
                 .build();
     }
 
@@ -60,5 +70,7 @@ public class UserServiceImpl implements UserService {
                 .birthDate(user.getBirthDate())
                 .build();
     }
+
+
 
 }

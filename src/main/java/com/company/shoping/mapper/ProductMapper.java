@@ -11,6 +11,8 @@ public abstract class ProductMapper {
 
     public static final ProductMapper INSTANCE= Mappers.getMapper(ProductMapper.class);
     @Mapping(target = "id",ignore = true)
+    @Mapping(target = "usersList",ignore = true)
+    @Mapping(target = "billsList",ignore = true)
     public abstract Products createProductCommandToProduct(AddProductCommand command);
 
 

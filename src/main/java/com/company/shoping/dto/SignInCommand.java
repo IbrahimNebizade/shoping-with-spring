@@ -1,22 +1,19 @@
 package com.company.shoping.dto;
 
 import lombok.AllArgsConstructor;
-import lombok.Builder;
 import lombok.Data;
 import lombok.NoArgsConstructor;
 
-import java.util.Date;
+import javax.validation.constraints.Email;
+import javax.validation.constraints.NotEmpty;
 
 @Data
 @AllArgsConstructor
 @NoArgsConstructor
-@Builder
-public class UpdateUserCommand {
-    private Long id;
-    private String name;
-    private String surname;
-    private Date birthDate;
+
+public class SignInCommand {
+    @Email
     private String email;
+    @NotEmpty
     private String password;
-    private String phone;
 }
