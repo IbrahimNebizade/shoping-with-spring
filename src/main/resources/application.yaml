@@ -12,7 +12,7 @@ spring:
     driver-class-name: org.postgresql.Driver
   mail:
     username: ibrahimreshid7@gmail.com
-    password: ivnhsiqctjcwqyyl
+    password: ${GMAIL_PASSWORD}
     host: smtp.gmail.com
     port: 587
     protocol: smtp
